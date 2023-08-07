@@ -1,0 +1,36 @@
+<h2>Demo 2 : Les Pipes</h2>
+<div class="chapter">
+    <h3>Les pipes existants</h3>
+    <div>
+        <h4>Sur les dates</h4>
+        <p>La date sans formatage : {{ birthdate | date : 'dd/MM/yyyy'}}</p>
+        <p>Birthdate short : {{birthdate | date : 'short'}}</p>
+    </div>
+
+    <div>
+        <h4>Sur les chaines</h4>
+        <p>La chaine sans formatage : {{ fullname }}</p>
+        <p>Le pipe uppercase : {{fullname | uppercase}}</p>
+        <p>Le pipe lowercase : {{fullname | lowercase}}</p>
+        <p>Le pipe titlecase : {{fullname | titlecase}}</p>
+    </div>
+
+    <div>
+        <h4>Sur les nombres</h4>
+        <p>Le nombre sans formatage : {{ price }}</p>
+        <p>Le nombre après formatage et sans param: {{ price | number}}</p>
+        <p>Le nombre après formatage et avec param: {{ price | number : '1.0-2'}}</p>
+        <!-- [chiffre min avant virgule].[nombre min après virgule]-[nombre max après virgule]-->
+        <p>Le nombre après formatage et avec param: {{ price | number : '1.2'}}</p>
+        <!-- Si nombre entier, rajoute ,00 à la fin-->
+    </div>
+
+
+</div>
+
+<div class="chapter">
+    <h3>Les customs pipes</h3>
+    <p>Il fait actuellement {{celciusTemp}}°C, ce qui équivaut à {{celciusTemp | toFahrenheit}}°F</p>
+    <p>16°C -> {{16 | convertTemp : 'c-to-f'}}°F</p>
+    <p>56°F -> {{56 | convertTemp : 'f-to-c' | number : '1.0-1'}}°C</p>
+</div>

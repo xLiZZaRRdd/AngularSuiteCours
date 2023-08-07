@@ -1,0 +1,36 @@
+<h2>Demo 1 - Les bindings</h2>
+
+<div class="chapter">
+    <h3>Property Binding</h3>
+    <h4>Binding One-Way</h4>
+    <p>Dans un seul sens, il vous permet d'afficher la valeur d'une propriété (mais pas de la modifier, que de l'affichage)</p>
+    <p> Bonjour {{prenom}} {{nom}} </p>
+
+    <h4>Binding Two-Way</h4>
+    <p>Vous permet de modifier une propriété</p>
+    <input type="text" [(ngModel)]="nom">
+
+</div>
+
+<div class="chapter">
+    <h3>Attribute Binding</h3>
+    <img [src]="monImage" alt="JESUS" width="200px">
+    <p>Les crochets autour de "src" permettent d'utiliser la propriété "monImage"</p>
+    <div>Big Mac <button class="btn" [disabled]="isNotAvailable">Commander</button></div>
+</div>
+
+<div class="chapter">
+    <h3>Event Binding</h3>
+    <p>{{message}}</p>
+    <div>
+        <button (click)="direBonjour('fr')" class="btn">Bonjour</button>
+        <button (click)="direBonjour('en')" class="btn">Hello</button>
+        <button (click)="direBonjour('nl')" class="btn">Wilkommen</button>
+        <button (click)="direBonjour('ar')" class="btn">Arabic</button>
+    </div>
+
+    <div>
+        <button class="btn" (click)="isNotAvailable = !isNotAvailable">Activer/Désactiver Big Mac</button>
+    </div>
+
+</div>
