@@ -1,1 +1,8 @@
-<p>exo1 works!</p>
+<h1 style="text-align: center;">Le Chronomètre</h1>
+<div>
+    <h1>{{ timerDisplay }}</h1>
+    <button (click)="startTimer()" [disabled]="timerRunning">START</button>
+    <button (click)="pauseTimer()" [disabled]="!timerRunning">PAUSE</button>
+    <button (click)="resetTimer()" [disabled]="timerRunning">RESET</button>
+  </div>
+  
