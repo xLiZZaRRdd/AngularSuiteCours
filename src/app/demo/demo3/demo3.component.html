@@ -1,0 +1,92 @@
+<h1>Demo 3 - Les Directives</h1>
+
+<div class="chapter">
+    <h1>Les components directives</h1>
+
+    <div class="subchapter">
+        <h2>ngModel</h2>
+        <p>Déjà vu, il permet de faire du Two Way Property Binding et a besoin de l'import du FormsModule pour fonctionner</p>
+        <a routerLink="/demo/demo1">Voir Demo 1</a>
+    </div>
+
+    <div class="subchapter">
+        <h2>ngStyle</h2>
+        <p>Une touche de <span [ngStyle]="{color: favColor, backgroundColor : 'darkblue'}">Chartreuse</span> ?</p>
+        <div id="back">
+            <div id="front" [ngStyle]="{width: width + '%'}"></div>
+        </div>
+        <button class="btn" (click)="fill()" [disabled]="timer">Remplir</button>
+        <button class="btn" (click)="empty()" [disabled]="!timer">Vider</button>
+    </div>
+
+    <div class="subchapter">
+        <h2>ngClass</h2>
+        <p [ngClass]="{big: isBig, pink : isPink, italic : isItalic}">Je suis du texte</p>
+        <div>
+            <button (click)="isBig = !isBig" class="btn">Gros/Pas Gros</button>
+            <button (click)="isPink = !isPink" class="btn">Rose/Pas Rose</button>
+            <button (click)="isItalic = !isItalic" class="btn">Italique/Pas Italique</button>
+        </div>
+    </div>
+</div>
+
+<div class="chapter">
+    <h1>Les structurals directives</h1>
+
+    <div class="subchapter">
+        <h2>ngIf</h2>
+
+        <!-- Facon flemme et répandue -->
+        <div *ngIf="isDay"> Jour </div>    
+        <div *ngIf="!isDay"> Nuit </div>
+
+        <!-- Facon propre moins répandue -->
+        <div *ngIf="isDay ;else night"> Jour </div>
+        <ng-template #night>
+            <div>Nuit</div>
+        </ng-template>
+
+        <button (click)="isDay = !isDay" class="btn">Jour/Nuit</button>
+    </div>
+
+    <div class="subchapter">
+        <h2>ngFor</h2>
+        <h5>Exemple avec liste simple :</h5>
+        <ul>
+            <li *ngFor="let trainerName of trainersNameList; let i = index">
+                {{i}} - {{trainerName}}
+            </li>
+        </ul>
+
+        <div class="flex justify-evenly items-center bg-slate-50 h-44">
+            <div *ngFor="let trainer of trainersList" class="bg-slate-200 h-5/6  w-1/5 rounded-lg flex flex-col items-center" [ngClass]="{'bg-pink-400': trainer.gender === 'f', 'bg-blue-400' : trainer.gender === 'm', 'bg-slate-600' : trainer.gender === 'nb'}">
+                <div>{{trainer.firstname}} {{trainer.lastname}}</div>
+                <img class="h-3/6" [src]="trainer.avatar" [alt]="trainer.firstname">
+                <div>{{ trainer.birthdate | date : 'dd/MM/yyyy' }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subchapter">
+        <h4>ngSwitch</h4>
+
+        <div [ngSwitch]="meteo">
+            <div *ngSwitchCase=" 'bien' ">Je me sens soleil</div>
+            <div *ngSwitchCase=" 'bof' ">Je me sens nuageux</div>
+            <div *ngSwitchCase=" 'pasouf' ">Je me sens pluie</div>
+            <div *ngSwitchCase=" 'naze' ">Je me sens orageux de dingue</div>
+            <div *ngSwitchDefault>Choisissez votre météo du jour</div>
+        </div>
+        <div>
+            <button (click)="meteo = 'bien' " class="btn">Bien</button>
+            <button (click)="meteo = 'bof' "  class="btn">Bof</button>
+            <button (click)="meteo = 'pasouf' "  class="btn">Pas ouf</button>
+            <button (click)="meteo = 'naze' "  class="btn">Naze</button>
+        </div>
+
+    </div>
+</div>
+
+<div class="chapter">
+    <h3>Les attributes directives(Custom Directives)</h3>
+</div>
