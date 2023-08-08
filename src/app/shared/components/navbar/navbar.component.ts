@@ -13,7 +13,7 @@ export class NavbarComponent
   linksList : Link[] = [
     {title : 'Accueil', url : '/', children : [], isVisible : true},
 
-    {title : 'Les Demos', url : '/demo', children : 
+    {title : 'Les Demos', url : '', children : 
     [
       {title : 'Demo 1 : Les Bindings', url : '/demo/demo1', children : [], isVisible : true},
       {title : 'Demo 2 : Les Pipes', url : '/demo/demo2', children : [], isVisible : true},
@@ -21,7 +21,7 @@ export class NavbarComponent
     ], isVisible : true},
 
 
-    {title : 'Les Exos', url : '/exo', children : 
+    {title : 'Les Exos', url : '', children : 
     [
       {title : 'Exo 1 : Premier Exo - Chronomètre', url : '/exo/exo1', children : [], isVisible : true}
     ], isVisible : true},
