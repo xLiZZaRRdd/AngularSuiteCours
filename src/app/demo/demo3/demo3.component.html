@@ -59,7 +59,7 @@
         </ul>
 
         <div class="flex justify-evenly items-center bg-slate-50 h-44">
-            <div *ngFor="let trainer of trainersList" class="bg-slate-200 h-5/6  w-1/5 rounded-lg flex flex-col items-center" [ngClass]="{'bg-pink-400': trainer.gender === 'f', 'bg-blue-400' : trainer.gender === 'm', 'bg-slate-600' : trainer.gender === 'nb'}">
+            <div *ngFor="let trainer of trainersList" class="bg-slate-200 h-5/6  w-1/5 rounded-lg flex flex-col items-center" [ngClass]="{'bg-pink-500': trainer.gender === 'f', 'bg-blue-500' : trainer.gender === 'm', 'bg-slate-500' : trainer.gender === 'nb'}">
                 <div>{{trainer.firstname}} {{trainer.lastname}}</div>
                 <img class="h-3/6" [src]="trainer.avatar" [alt]="trainer.firstname">
                 <div>{{ trainer.birthdate | date : 'dd/MM/yyyy' }}</div>

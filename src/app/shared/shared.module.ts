@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ToFahrenheitPipe } from './pipes/to-fahrenheit.pipe';
 import { ConvertTempPipe } from './pipes/convert-temp.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import { TrainerCardComponent } from './components/trainer-card/trainer-card.component';
 
 
 
@@ -10,7 +11,8 @@ import { HighlightDirective } from './directives/highlight.directive';
   declarations: [
     ToFahrenheitPipe,
     ConvertTempPipe,
-    HighlightDirective
+    HighlightDirective,
+    TrainerCardComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { HighlightDirective } from './directives/highlight.directive';
   exports : [
     ToFahrenheitPipe,
     ConvertTempPipe,
-    HighlightDirective
+    HighlightDirective,
+    TrainerCardComponent
   ]
 })
 export class SharedModule { }

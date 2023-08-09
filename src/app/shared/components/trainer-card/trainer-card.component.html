@@ -1,0 +1,20 @@
+<!-- *ngIf => On ne construit la card que si la prop trainer n'est pas undefined -->
+<!-- Le template ligne 11 correspond au else de la ligne 4 -->
+
+<div class="w-full h-full  flex flex-col items-center" *ngIf="trainer; else errorCard"
+    [ngClass]="{'bg-pink-500': trainer.gender === 'f', 'bg-blue-500' : trainer.gender === 'm', 'bg-slate-500' : trainer.gender === 'nb'}">
+
+    <div>{{trainer.firstname}} {{trainer.lastname}}</div>
+        <img class="h-3/6" [src]="trainer.avatar" [alt]="trainer.firstname">
+    <div>{{ trainer.birthdate | date : 'dd/MM/yyyy' }}</div>
+    
+    <button (click)="sendTrainer()" class="btn">C'est moi 🍦</button>
+</div>
+
+<ng-template #errorCard>
+    <div
+    class="bg-slate-200 h-5/6 w-1/5 rounded-lg flex flex-col items-center">
+        <div>Error</div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Zoellick%2C_Robert_%28official_portrait_2008%29.jpg/1200px-Zoellick%2C_Robert_%28official_portrait_2008%29.jpg" alt="">
+    </div>
+</ng-template>

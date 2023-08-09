@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Trainer } from 'src/app/shared/models/trainers';
 
 @Component({
   selector: 'app-demo4',
@@ -6,8 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./demo4.component.scss']
 })
 export class Demo4Component {
-  prenom : string = 'Robert';
+  //props pour démo base
+  prenom : string = 'Michel';
   besoinEnfant : string = '[Mon enfant n\'a besoin de rien]'
+
+  //props pour démo cards
+  trainersList : Trainer[] = [
+    {id : 0, firstname : 'Khun', lastname : 'Ly', birthdate : new Date(1982,4,6), gender : 'm', avatar : 'assets/Images/khun.png'},
+    {id : 1, firstname : 'Aude', lastname : 'Beurive', birthdate : new Date(1989,9,16), gender : 'f', avatar : 'assets/Images/aude.png'},
+    {id : 2, firstname : 'Gavin', lastname : 'Chaineux', birthdate : new Date(1996,9,18), gender : 'nb', avatar : 'assets/Images/gavin.png'}
+  ]
+
+  trainerOfTheDay! : Trainer;
 
   receiveNeed(besoin : string) : void
   {
