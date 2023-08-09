@@ -14,4 +14,7 @@
         <button (click)="sendNeed('manger')" class="btn">Manger 🍔</button>
         <button (click)="sendNeed('changer sa couche')" class="btn">Changer la couche 💩</button>
     </div>
+
+    <!-- Sans le ng content, les balises html de app-enfant dans demo4component.html ne sont pas prises en compte  -->
+    <ng-content></ng-content>
 </div>

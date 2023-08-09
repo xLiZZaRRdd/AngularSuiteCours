@@ -1,0 +1,27 @@
+table,
+td {
+  border: 1px solid #333;
+}
+
+thead,
+tfoot {
+  background-color: chartreuse;
+  color: #fff;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+  
+th {
+    background-color: chartreuse;
+    color: white;
+}
+th,
+td {
+    width: 150px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}
