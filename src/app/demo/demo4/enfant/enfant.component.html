@@ -1,3 +1,17 @@
 <div class="w-4/5 m-auto px-2 py-1 border border-green-700">
     <h3>Je suis le composant enfant</h3>
+    <p>Mon parent s'appelle {{prenomParent}}</p>
+
+    <ng-container *ngIf="hobbiesParent.length > 0">
+        <h4>Les hobbies de mon parent sont : </h4>
+        <ul>
+            <li *ngFor="let hobby of hobbiesParent">{{hobby}}</li>
+        </ul>
+    </ng-container>
+
+    <div>
+        <button (click)="sendNeed('dormir')" class="btn">Dormir 💤</button>
+        <button (click)="sendNeed('manger')" class="btn">Manger 🍔</button>
+        <button (click)="sendNeed('changer')" class="btn">Changer la couche 💩</button>
+    </div>
 </div>

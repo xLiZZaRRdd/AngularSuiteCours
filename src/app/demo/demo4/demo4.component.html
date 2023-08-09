@@ -3,7 +3,13 @@
 
     <div class="w-4/5 m-auto px-2 py-1 border border-pink-800">
         <h3>Je suis le composant parent</h3>
-        <app-enfant></app-enfant>
+        <p> {{besoinEnfant}} </p>
+
+        <!-- $event est une convention de nommage, représente la valeur envoyée en même temps que l'évènement -->
+        <app-enfant (onNeedSelect)="receiveNeed($event)"
+         [prenomParent]="prenom"
+         [hobbiesParent]="['Pétanque', 'Ricard', 'Casino']">
+        </app-enfant>
     </div>
 
 </div>
