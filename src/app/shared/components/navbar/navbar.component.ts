@@ -17,7 +17,8 @@ export class NavbarComponent
     [
       {title : 'Demo 1 : Les Bindings', url : '/demo/demo1', children : [], isVisible : true},
       {title : 'Demo 2 : Les Pipes', url : '/demo/demo2', children : [], isVisible : true},
-      {title : 'Demo 3 : Les Directives', url : '/demo/demo3', children : [], isVisible : true}
+      {title : 'Demo 3 : Les Directives', url : '/demo/demo3', children : [], isVisible : true},
+      {title : 'Demo 4 : Input/Output', url : '/demo/demo4', children : [], isVisible : true}
     ], isVisible : true},
 
 
@@ -30,12 +31,12 @@ export class NavbarComponent
   display(parent : Link) : void{
     
     let wasVisible = parent.isVisible
-    console.log(wasVisible)
-    for(let i = 0; i < this.linksList.length; i++){
+
+    for(let i = 0; i < this.linksList.length; i++)
+    {
         this.linksList[i].isVisible = false
     }
     parent.isVisible = !wasVisible
-    
   }
 }
 
