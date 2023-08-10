@@ -1,0 +1,13 @@
+<h1 style="text-align: center;">La Shopping List V2</h1>
+
+<div class="chapter">
+    
+    <div>
+        <input type="text" placeholder="Nom du produit"
+        [(ngModel)]="productName" (keyup.Enter)="addProduct()">
+        <button (click)="addProduct()" class="btn">AJOUTER</button>
+    </div>
+
+    <app-shopping-list></app-shopping-list>
+</div>
+
