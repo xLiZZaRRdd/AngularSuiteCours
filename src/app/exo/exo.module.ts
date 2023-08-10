@@ -6,6 +6,8 @@ import { ExoComponent } from './exo.component';
 import { Exo1Component } from './exo1/exo1.component';
 import { Exo2Component } from './exo2/exo2.component';
 import { ShoppingListEnfantComponent } from './exo2/shopping-list-enfant/shopping-list-enfant.component';
+import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { ShoppingListEnfantComponent } from './exo2/shopping-list-enfant/shoppin
   ],
   imports: [
     CommonModule,
-    ExoRoutingModule
+    ExoRoutingModule,
+    SharedModule
   ]
 })
 export class ExoModule { }

@@ -1,4 +1,4 @@
-export interface ShoppingListCaracs{
+export interface Product{
     name : string;
     quantity : number;
 }

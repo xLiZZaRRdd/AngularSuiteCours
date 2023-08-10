@@ -25,7 +25,7 @@ export class NavbarComponent
     {title : 'Les Exos', url : '', children : 
     [
       {title : 'Exo 1 : Premier Exo - Chronomètre', url : '/exo/exo1', children : [], isVisible : true},
-      {title : 'Exo 2 : Deuxième Exo - Shopping List', url : '/exo/exo2', children : [], isVisible : true}
+      {title : 'Exo 2 : Deuxième Exo - Shopping List(V1)', url : '/exo/exo2', children : [], isVisible : true}
     ], isVisible : true},
   ]
 

@@ -1,24 +1,26 @@
-<table>
-    <thead>
-    <tr>
-        <th colspan="3">LA SHOPPING LIST</th>
-    </tr>
-    </thead>
-    
-    <tbody>
-    <tr>
-        <td>Nom</td>
-        <td>Quantité</td>
-        <td>Actions</td>
-    </tr>
+<div class="subchapter">
+    <h3>Ma liste de courses :</h3>
 
-    <tr *ngFor="let caracs of shoppingListFromParent">
-        <td>{{caracs.name}}</td>
-        <td>{{caracs.quantity}}</td>
-        <td><button (click)="addProductQtt()" class="btn"></button>
-            <button (click)="removeProductQtt()" class="btn"></button>
-            <button (click)="deleteProduct()" class="btn"></button></td>
-    </tr>
-    </tbody>
-</table>
+    <table>
+        <thead> <!-- En tête du tableau -->
+            <tr>
+                <th>Nom</th>
+                <th>Quantité</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let item of listToShow">
+                <td>{{ item.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>
+                    <button (click)="onDownQty.emit(item)" class="btn">➖</button>
+                    <button (click)="onUpQty.emit(item)" class="btn">➕</button>
+                    <button (click)="onDeleteProduct.emit(item)" class="btn">❌</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 

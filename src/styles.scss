@@ -10,9 +10,14 @@
     
     }
     h2 {
-        @apply text-xl text-slate-900 uppercase;
+        @apply text-xl text-slate-900 uppercase mb-2;
     }
-    
+    h3 {
+        @apply text-lg text-slate-600 mb-2;
+    }
+    h4 { 
+        @apply text-slate-600 py-2 border-b border-primary-300;
+    }
     nav {
         li {
             @apply mb-1;
@@ -21,23 +26,49 @@
             @apply text-primary-900 hover:text-white tracking-wide;
         }
     }
+    a:not(nav a) {
+        @apply text-slate-600 pb-1 border-b border-orange-600;
+        &:hover {
+            @apply text-orange-600 border-slate-600;
+        }
+    }
+
+    table {
+        @apply m-2 w-4/5;
+        th:first-child {
+            @apply w-2/5
+        }
+        th:last-child {
+            @apply w-2/5
+        }
+    }
+
+    table, th, td {
+        @apply border border-slate-600 border-collapse px-2 py-1;
+
+    }
 }
 
 @layer components {
     //Pour styliser via id, classes et dérivés
     .btn {
         @apply
-         bg-slate-800 text-slate-200 border border-slate-800 rounded-md p-2 
+         bg-slate-800 text-slate-200 border border-slate-800 rounded-md p-2 m-1
         
          hover:bg-slate-200 hover:text-slate-800;
          
          &[disabled] {
-            @apply bg-slate-100 text-slate-500 border-slate-500
+            @apply bg-slate-300 text-slate-500 border-slate-500
          }
         }
+    
+    
 
-    .chapter{
-        @apply bg-primary-100 p-2 mb-2
+    .chapter {
+        @apply bg-primary-100 p-2 mb-2;
+    }
+    .subchapter {
+        @apply p-2 mb-2;
     }
 }
 

@@ -25,7 +25,7 @@ import { EnfantComponent } from './demo4/enfant/enfant.component';
   imports: [
     CommonModule,
     DemoRoutingModule,
-    FormsModule, //Pour pouvoir utiliser ngModel
+    // FormsModule >>> Pour pouvoir utiliser ngModel >>> Plus besoin de le mettre ici car il est dans shared
     SharedModule //Importe tout ce qu'il y'a dans le module partagé
   ]
 })
