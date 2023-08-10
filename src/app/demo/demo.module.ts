@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { Demo3Component } from './demo3/demo3.component';
 import { Demo4Component } from './demo4/demo4.component';
 import { EnfantComponent } from './demo4/enfant/enfant.component';
+import { Demo5Component } from './demo5/demo5.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { EnfantComponent } from './demo4/enfant/enfant.component';
     Demo3Component,
     Demo4Component,
     EnfantComponent,
+    Demo5Component,
   ],
   imports: [
     CommonModule,
