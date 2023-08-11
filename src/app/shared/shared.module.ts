@@ -4,7 +4,7 @@ import { ToFahrenheitPipe } from './pipes/to-fahrenheit.pipe';
 import { ConvertTempPipe } from './pipes/convert-temp.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { TrainerCardComponent } from './components/trainer-card/trainer-card.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,14 +17,16 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule, //Pour utiliser le ngModel
+    ReactiveFormsModule
   ],
   exports : [
     ToFahrenheitPipe,
     ConvertTempPipe,
     HighlightDirective,
     TrainerCardComponent,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

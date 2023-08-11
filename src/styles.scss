@@ -47,6 +47,13 @@
         @apply border border-slate-600 border-collapse px-2 py-1;
 
     }
+
+    input[type="text"], input[type="password"], input[type="email"], input[type="date"], select {
+        @apply rounded-md p-2 m-1
+    }
+    input[type="radio"], input[type="checkbox"] {
+        @apply scale-150 mx-3
+    }
 }
 
 @layer components {
@@ -69,6 +76,10 @@
     }
     .subchapter {
         @apply p-2 mb-2;
+    }
+
+    .form-group {
+        @apply flex flex-col mb-2;
     }
 }
 
