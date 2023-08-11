@@ -1,0 +1,52 @@
+<h1>Exo 4 - Ajouter des films</h1>
+
+<div class="chapter">
+    <form class="w-4/6 m-auto" 
+        [formGroup]="movieForm"
+        (ngSubmit)="confirmAndAddMovie()">
+        <!-- Pour utiliser [formGroup] on doit penser à importer ReactiveFormsModule  -->
+        <div class="form-group">
+            <label for="movieTitle">Nom du film :</label>
+            <input id="movieTitle" type="text" formControlName="movieTitle">
+            <span class="text-sm text-red-600"
+            *ngIf="movieForm.get('movieTitle')?.touched && movieForm.get('movieTitle')?.errors?.['required']">Champs requis</span>
+            <span class="text-sm text-red-600"
+            *ngIf="movieForm.get('movieTitle')?.errors?.['maxlength']">Maximum 255 caractères</span>
+        </div>
+
+        <div class="form-group">
+            <label for="movieSynopsis">Synopsis du film :</label>
+            <textarea id="movieSynopsis" type="text" formControlName="movieSynopsis"></textarea>
+            <span class="text-sm text-red-600"
+            *ngIf="movieForm.get('movieSynopsis')?.touched && movieForm.get('movieSynopsis')?.errors?.['required']">Champs requis</span>
+        </div>
+
+        <div class="form-group">
+            <input type="number" formControlName="movieReleaseYear" placeholder="Année de sortie du film">
+            <span class="text-sm text-red-600"
+                  *ngIf="movieForm.get('movieReleaseYear')?.touched && movieForm.get('movieReleaseYear')?.errors?.['yearRange']">
+              L'année doit être entre 1895 et 2050
+            </span>
+          </div>
+          
+
+        <div class="form-group">
+            <label>Lien vers la bande annonce :</label>
+            <input formControlName="movieTrailer" placeholder="url (Optionnel)">
+        </div>
+
+        <div formArrayName="actors">
+            <button type="button" class="btn" (click)="addActor()">Ajouter un/des acteur/s :</button>
+            <div *ngFor="let control of actors.controls; let i = index">
+                <label [for]=" 'actors' + i ">Acteur N°{{i+1}}</label>
+                <input [id]=" 'actors' + i  " type="text"
+                [formControlName]="i">
+                <span (click)="removeActor(i)">❌</span>
+            </div>
+        </div>
+
+        <div>
+            <input class="btn" type="submit" value="Valider l'ajout du film">
+        </div>
+    </form> 
+</div>

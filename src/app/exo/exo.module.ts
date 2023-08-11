@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { Exo3Component } from './exo3/exo3.component';
 import { ShoppingListComponent } from './exo3/shopping-list/shopping-list.component';
+import { Exo4Component } from './exo4/exo4.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ShoppingListComponent } from './exo3/shopping-list/shopping-list.compon
     Exo2Component,
     ShoppingListEnfantComponent,
     Exo3Component,
-    ShoppingListComponent
+    ShoppingListComponent,
+    Exo4Component
   ],
   imports: [
     CommonModule,

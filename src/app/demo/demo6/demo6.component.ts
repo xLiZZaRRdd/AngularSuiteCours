@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { beforeTodayValidator } from 'src/app/shared/validators/beforeToday.validator';
 
 @Component({
   selector: 'app-demo6',
@@ -18,7 +19,7 @@ export class Demo6Component {
       //Attention toujours mettre des crochets
       lastname : [null, [Validators.required, Validators.maxLength(100), Validators.pattern(/^[\D]*$/)], []], //Troisième liste non obligatoire si vide
       firstname : [null, [Validators.required, Validators.maxLength(100), Validators.pattern(/^[\D]*$/)]],
-      birthdate : [null, [Validators.required]],
+      birthdate : [null, [ beforeTodayValidator() ]],
       email : [null, [Validators.required, Validators.email]],
       password : [null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)]],
       gender : [null],

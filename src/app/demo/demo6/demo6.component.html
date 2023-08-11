@@ -35,8 +35,12 @@
 
         <div class="form-group">
             <label for="birthdate">Votre date de naissance :</label>
-            <input id="birthdate" type="date" formControlName="birthdate">
+            <input id="birthdate" type="date"
+            formControlName="birthdate">
+            <span class="text-sm text-red-600"
+            *ngIf="registerForm.get('birthdate')?.errors?.['beforetoday']">Vous ne pouvez entrer une date dans le futur</span>
         </div>
+
 
         <div class="form-group">
             <label for="mail">Votre mail :</label>
