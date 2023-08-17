@@ -20,7 +20,8 @@ export class NavbarComponent
       {title : 'Demo 3 : Les Directives', url : '/demo/demo3', children : [], isVisible : true},
       {title : 'Demo 4 : Input/Output', url : '/demo/demo4', children : [], isVisible : true},
       {title : 'Demo 5 : Les services', url : '/demo/demo5', children : [], isVisible : true},
-      {title : 'Demo 6 : Les formulaires', url : '/demo/demo6', children : [], isVisible : true}
+      {title : 'Demo 6 : Les formulaires', url : '/demo/demo6', children : [], isVisible : true},
+      {title : 'Demo 7 : Crud avec le Routing', url : '/demo/demo7', children : [], isVisible : true}
     ], isVisible : true},
 
 

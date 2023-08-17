@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './shared/components/home/home.component';
 import { DemoComponent } from './demo/demo.component';
 import { ExoComponent } from './exo/exo.component';
+import { NotfoundComponent } from './shared/components/notfound/notfound.component';
 
 const routes: Routes = [
   { path : "", component : HomeComponent },
@@ -15,7 +16,13 @@ const routes: Routes = [
   // Lazy-Loading
   // On ne va charger le module Demo et tous ses enfants que lorsqu'on va accéder à la route demo
   { path : "demo", component : DemoComponent, loadChildren : () => import("./demo/demo.module").then(m => m.DemoModule) },
-  { path : "exo", component : ExoComponent, loadChildren : () => import("./exo/exo.module").then(m => m.ExoModule) }
+  { path : "exo", component : ExoComponent, loadChildren : () => import("./exo/exo.module").then(m => m.ExoModule) },
+  { path : "notfound", component : NotfoundComponent},
+
+  // ** => Si aucune des routes existantes au dessus => redirection
+  // ----!!!! Toujours à la fin !!!!----
+  { path : "**", redirectTo : "/notfound"}
+
 ];
 
 @NgModule({

@@ -13,6 +13,10 @@ import { Demo4Component } from './demo4/demo4.component';
 import { EnfantComponent } from './demo4/enfant/enfant.component';
 import { Demo5Component } from './demo5/demo5.component';
 import { Demo6Component } from './demo6/demo6.component';
+import { Demo7Component } from './demo7/demo7.component';
+import { CreateTrackComponent } from './demo7/create-track/create-track.component';
+import { DetailTrackComponent } from './demo7/detail-track/detail-track.component';
+import { UpdateTrackComponent } from './demo7/update-track/update-track.component';
 
 
 @NgModule({
@@ -25,6 +29,10 @@ import { Demo6Component } from './demo6/demo6.component';
     EnfantComponent,
     Demo5Component,
     Demo6Component,
+    Demo7Component,
+    CreateTrackComponent,
+    DetailTrackComponent,
+    UpdateTrackComponent,
   ],
   imports: [
     CommonModule,
