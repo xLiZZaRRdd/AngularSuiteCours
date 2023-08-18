@@ -30,7 +30,8 @@ export class NavbarComponent
       {title : 'Exo 1 : Premier Exo - Chronomètre', url : '/exo/exo1', children : [], isVisible : true},
       {title : 'Exo 2 : Deuxième Exo - Shopping List(V1)', url : '/exo/exo2', children : [], isVisible : true},
       {title : 'Exo 3 : Troisième Exo - Shopping List(V2)', url : '/exo/exo3', children : [], isVisible : true},
-      {title : 'Exo 4 : Quatrième Exo - Ajouter des films', url : '/exo/exo4', children : [], isVisible : true}
+      {title : 'Exo 4 : Quatrième Exo - Ajouter des films', url : '/exo/exo4', children : [], isVisible : true},
+      {title : 'Exo 5 : Cinquième Exo - Fan de séries', url : '/exo/exo5', children : [], isVisible : true}
     ], isVisible : true},
   ]
 

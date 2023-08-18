@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { Exo3Component } from './exo3/exo3.component';
 import { ShoppingListComponent } from './exo3/shopping-list/shopping-list.component';
 import { Exo4Component } from './exo4/exo4.component';
+import { Exo5Component } from './exo5/exo5.component';
+import { CreateFanComponent } from './exo5/create-fan/create-fan.component';
+import { DetailsFanComponent } from './exo5/details-fan/details-fan.component';
+import { UpdateFanComponent } from './exo5/update-fan/update-fan.component';
 
 
 @NgModule({
@@ -20,7 +24,11 @@ import { Exo4Component } from './exo4/exo4.component';
     ShoppingListEnfantComponent,
     Exo3Component,
     ShoppingListComponent,
-    Exo4Component
+    Exo4Component,
+    Exo5Component,
+    CreateFanComponent,
+    DetailsFanComponent,
+    UpdateFanComponent
   ],
   imports: [
     CommonModule,
