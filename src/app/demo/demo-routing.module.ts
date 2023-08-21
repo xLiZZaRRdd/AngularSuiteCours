@@ -10,6 +10,7 @@ import { Demo7Component } from './demo7/demo7.component';
 import { CreateTrackComponent } from './demo7/create-track/create-track.component';
 import { DetailTrackComponent } from './demo7/detail-track/detail-track.component';
 import { UpdateTrackComponent } from './demo7/update-track/update-track.component';
+import { Demo8Component } from './demo8/demo8.component';
 
 const routes: Routes = [
   //Liste de tous les liens enfants de Demo
@@ -22,7 +23,9 @@ const routes: Routes = [
   { path : "demo7", component : Demo7Component},
   { path : "demo7/create", component : CreateTrackComponent},
   { path : "demo7/detail/:id", component : DetailTrackComponent}, //le :id indique que la valeur sera dynamique
-  { path : "demo7/update/:id", component : UpdateTrackComponent}  //le :id indique que la valeur sera dynamique
+  { path : "demo7/update/:id", component : UpdateTrackComponent}, //le :id indique que la valeur sera dynamique
+  { path : "demo8", component : Demo8Component}
+
 ];
 
 @NgModule({
