@@ -1,7 +1,7 @@
-<h1>DEMO 7 - Playlist</h1>
+<h1>DEMO 9 - Playlist avec CRUB & FAKE-API</h1>
 
 <div class="chapter">
-    <button class="btn" routerLink="/demo/demo7/create">Ajouter un son</button>
+    <button class="btn" routerLink="/demo/demo9/create">Ajouter un son</button>
 
     <table>
         <thead>
@@ -22,8 +22,8 @@
                 </td>
                 <td> {{ track.duration | convertTime }} </td>
                 <td>
-                    <button class="btn" routerLink="/demo/demo7/detail/{{track.id}}">🔍</button>
-                    <button class="btn" routerLink="/demo/demo7/update/{{track.id}}">📜</button>
+                    <button class="btn" routerLink="/demo/demo9/detail/{{track.id}}">🔍</button>
+                    <button class="btn" routerLink="/demo/demo9/update/{{track.id}}">📜</button>
                     <button (click)="delete(track.id)" class="btn">❌</button>
                 </td>
             </tr>

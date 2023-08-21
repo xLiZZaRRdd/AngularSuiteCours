@@ -11,6 +11,9 @@ import { CreateTrackComponent } from './demo7/create-track/create-track.componen
 import { DetailTrackComponent } from './demo7/detail-track/detail-track.component';
 import { UpdateTrackComponent } from './demo7/update-track/update-track.component';
 import { Demo8Component } from './demo8/demo8.component';
+import { Demo9Component } from './demo9/demo9.component';
+import { CreateTrackApiComponent } from './demo9/create-track-api/create-track-api.component';
+import { UpdateTrackApiComponent } from './demo9/update-track-api/update-track-api.component';
 
 const routes: Routes = [
   //Liste de tous les liens enfants de Demo
@@ -24,7 +27,10 @@ const routes: Routes = [
   { path : "demo7/create", component : CreateTrackComponent},
   { path : "demo7/detail/:id", component : DetailTrackComponent}, //le :id indique que la valeur sera dynamique
   { path : "demo7/update/:id", component : UpdateTrackComponent}, //le :id indique que la valeur sera dynamique
-  { path : "demo8", component : Demo8Component}
+  { path : "demo8", component : Demo8Component},
+  { path : "demo9", component : Demo9Component},
+  { path : "demo9/create", component : CreateTrackApiComponent},
+  { path : "demo9/update/:id", component : UpdateTrackApiComponent}
 
 ];
 

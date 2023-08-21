@@ -24,7 +24,8 @@ export class NavbarComponent
       {title : 'Demo 5 : Les services', url : '/demo/demo5', children : [], isVisible : true},
       {title : 'Demo 6 : Les formulaires', url : '/demo/demo6', children : [], isVisible : true},
       {title : 'Demo 7 : Crud avec le Routing', url : '/demo/demo7', children : [], isVisible : true},
-      {title : 'Demo 8 : HttpClient > Requêtes API', url : '/demo/demo8', children : [], isVisible : true}
+      {title : 'Demo 8 : HttpClient > Requêtes API', url : '/demo/demo8', children : [], isVisible : true},
+      {title : 'Demo 9 : CRUD FAKE-API', url : '/demo/demo9', children : [], isVisible : true}
     ], isVisible : true},
 
 
