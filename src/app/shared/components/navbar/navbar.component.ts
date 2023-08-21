@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Link } from '../../models/link';
+import { User } from '../../models/user';
+import { FakeAuthService } from '../../services/fake-auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -35,16 +37,68 @@ export class NavbarComponent
     ], isVisible : true},
   ]
 
-  display(parent : Link) : void{
-    
-    let wasVisible = parent.isVisible
+  connectedUser : User | undefined;
 
-    for(let i = 0; i < this.linksList.length; i++)
-    {
-        this.linksList[i].isVisible = false
-    }
-    parent.isVisible = !wasVisible
+  constructor(private _fakeAuthService : FakeAuthService) {
+
   }
-}
 
+  ngOnInit(): void {
+      //Méthode qui se déclenche quand le composant apparait
+      console.log("INIT NAVBAR");
+
+      // On s'abonne à notre Observable
+      this._fakeAuthService.$connectedUser.subscribe({
+       next : (value) => {
+         //Quand l'Observable change de valeur
+         this.connectedUser = value;
+         console.log("NEXT IN NAVBAR : ", value);
+         
+       },
+       error : (err) => {
+         //Quand l'Observable rencontre une erreur
+         //On l'utilisera surtout pour les Observables de requête API
+       },
+       complete : () => {
+         //A la fin de vie de l'Observable
+         //Pour les observables qu'on fait nous même -> Il ne sera quasi jamais appelé puisqu'on veut que notre Observable existe tout le temps de la navigation sur le site
+         //Pour les oservables de requête -> La fin de vie, c'est la fin de la requête
+       }
+      });
+
+      // Si juste fonction anonyme -> d'office le next
+      //this._fakeAuthService.$connectedUser.subscribe( () => {}); 
+      
+  }
+
+  ngOnDestroy(): void {
+      //Méthode qui se déclenche quand le composant disparait
+      console.log("DESTROY NAVBAR");
+      
+  }
+
+ //  display(link : Link) : void {
+ //     link.isVisible = !link.isVisible;
+ //     this.links.forEach(l => {
+ //       if(l != link) {
+ //         l.isVisible = false;
+ //       }
+ //     });
+ //  }
+
+ display(link : Link) : void {
+   let wasVisible = link.isVisible;
+   for(let i=0; i< this.linksList.length; i++) {
+     this.linksList[i].isVisible = false;
+   }
+   link.isVisible = !wasVisible;
+ }
+
+ logout() : void {
+   //Avant Obs
+   // this.connectedUser = this._fakeAuthService.logout();
+   //Après Obs
+   this._fakeAuthService.logout();
+ }
+}
 
