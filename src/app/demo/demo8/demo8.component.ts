@@ -34,7 +34,7 @@ export class Demo8Component {
           console.log('ERROR : ', err)
         },
         complete : () => {
-          //A la fin de larequête, quand on a eu un résultat
+          //A la fin de la requête, quand on a eu un résultat
           console.log('REQUEST DONE')
         },
       });

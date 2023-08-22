@@ -1,0 +1,43 @@
+<body>
+    <main>
+        <div class="content">
+            <div class="pokedex">
+                <div class="dot"></div>
+                <div class="second-dot"></div>
+                <div class="mini-dot"></div>
+                <div class="pokedex-inside">
+                    <div class="pkm-left">
+                        <div id="name" class="name">
+                            <p id="pkm-name">{{pokemonModel.name}}</p>
+                        </div>
+                        <div class="img">
+                            <img id="pkm-img-front" [src]="pokemonModel.sprites.front_default" alt="">
+                            <img id="pkm-img-back" [src]="pokemonModel.sprites.back_default" alt="">
+                        </div>
+                        <div id="description" class="description">Description (coming soon)</div>
+                        <div id="infos" class="infos">
+                            <!-- 3 ternaires pour afficher des "X" en arrivant sur la page d'accueil et qu'aucun pokémon n'a été selectionné -->
+                            <p>N° <span id="pkm-id" *ngIf="pokemonModel.id === 0">XXX</span>{{pokemonModel.id !== 0 ? pokemonModel.id : ''}}</p>
+                            <p>Poids : <span id="pkm-weight" *ngIf="pokemonModel.weight !== 0">{{pokemonModel.weight / 10}}</span>{{pokemonModel.weight === 0 ? 'X' : ''}} kg</p>
+                            <p>Taille : <span id="pkm-height" *ngIf="pokemonModel.height !== 0">{{pokemonModel.height * 10}}</span>{{pokemonModel.height === 0 ? 'X' : ''}} cm</p>
+                        </div>
+                    </div>
+                    <div id="pkm-right" class="pkm-right">
+                        <div id="pokemons" class="pokemons"></div>
+                        <ul class="pkm-list">
+                            <li class="pkm-select" *ngFor="let poke of pokemonList"><a *ngIf="poke.id < 1011" (click)="changePokemon(poke.id)">{{poke.name}}</a></li>
+                        </ul>
+                        <div class="buttons">
+                            <button id="btn-prev" (click)="displayBefore()" [disabled]="offsetValue === 0">
+                                ⬆
+                            </button>
+                            <button id="btn-next" (click)="displayAfter()" [disabled]="offsetValue >= 990">
+                                ⬇
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
