@@ -1,4 +1,9 @@
-:root {
+@font-face {
+    font-family: Pokemon;
+    src: url(../../../assets/fonts/PressStart2P-Regular.ttf);
+}
+
+.content {
         --normal: rgb(168, 167, 122, 1);
         --fire: rgb(238, 129, 48, 1);
         --water: rgb(99, 144, 240, 1);
@@ -148,6 +153,7 @@ ul {
 
 button:disabled {
     background-color: darkgray;
+    border: 1px;
 }
 
 .name {
@@ -200,7 +206,6 @@ button:disabled {
 
 .grass {
     background: linear-gradient(90deg, var(--grass) 0%, rgba(147,4,53,0) 10%, rgba(166,3,44,0) 90%, var(--grass) 100%);
-
 }
 
 .fire {
