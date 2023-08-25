@@ -16,12 +16,10 @@ export class Exo6Component {
 
 constructor(private _pokeapiService : PokeApiService, private _http : HttpClient) {}
 
+//Récupérer les valeurs de l'API et les mettre dns une liste
 ngOnInit(): void {
-  //La boring list contient 2 choses, d'abord le nom du pokémon et ensuite l'url vers sa page personnelle
-  //Il a donc été nécessaire de séparer ces deux choses et de donner les valeurs dans la vraie pokemonList[]
   this._pokeapiService.getAll().subscribe((data : {results : {url : string}[]}) => 
     {
-      //allo
       let obs : Observable<Pokemon>[] = [];
 
       data.results.forEach(elem => obs.push(this._pokeapiService.getDetails(elem.url)));

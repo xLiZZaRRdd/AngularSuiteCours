@@ -18,7 +18,8 @@ import { Demo8Component } from './demo8/demo8.component';
 import { HttpClientModule } from '@angular/common/http';
 import { Demo9Component } from './demo9/demo9.component';
 import { CreateTrackApiComponent } from './demo9/create-track-api/create-track-api.component';
-import { UpdateTrackApiComponent } from './demo9/update-track-api/update-track-api.component'
+import { UpdateTrackApiComponent } from './demo9/update-track-api/update-track-api.component';
+import { Demo10Component } from './demo10/demo10.component'
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { UpdateTrackApiComponent } from './demo9/update-track-api/update-track-a
     Demo9Component,
     CreateTrackApiComponent,
     UpdateTrackApiComponent,
+    Demo10Component,
   ],
   imports: [
     CommonModule,

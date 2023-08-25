@@ -24,11 +24,11 @@
                         </ul>
                     </div>
                 </div>
+
                 <div id="pkm-right" class="pkm-right">
-                    <div id="pokemons" class="pokemons"></div>
-                    <ul class="pkm-list">
+                    <div id="pokemons" class="pkm-list">
                         <li class="pkm-select" [style]="'color: var(--'+poke.types[0].type.name+')'" *ngFor="let poke of pokemonList"><p *ngIf="poke.id < 1011" (click)="changePokemon(poke.id)">{{poke.name}}</p></li>
-                    </ul>
+                    </div>
                     <div class="buttons">
                         <button id="btn-prev" (click)="display(-20)" [disabled]="offsetValue === 0">
                             ⬆
