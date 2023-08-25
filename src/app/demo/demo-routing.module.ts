@@ -16,6 +16,7 @@ import { CreateTrackApiComponent } from './demo9/create-track-api/create-track-a
 import { UpdateTrackApiComponent } from './demo9/update-track-api/update-track-api.component';
 import { connectedGuard } from '../shared/guards/connected.guard';
 import { Demo10Component } from './demo10/demo10.component';
+import { trackResolver } from '../shared/resolvers/track.resolver';
 
 const routes: Routes = [
   //Liste de tous les liens enfants de Demo
@@ -30,7 +31,7 @@ const routes: Routes = [
   { path : "demo7/detail/:id", component : DetailTrackComponent}, //le :id indique que la valeur sera dynamique
   { path : "demo7/update/:id", component : UpdateTrackComponent}, //le :id indique que la valeur sera dynamique
   { path : "demo8", component : Demo8Component},
-  { path : "demo9", component : Demo9Component},
+  { path : "demo9", component : Demo9Component, resolve : { tracks : trackResolver } },
   { path : "demo9/create", component : CreateTrackApiComponent},
   { path : "demo9/update/:id", component : UpdateTrackApiComponent},
   { path : "demo10", component : Demo10Component},
